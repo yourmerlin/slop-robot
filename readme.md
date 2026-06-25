@@ -5,39 +5,37 @@ STA mode → your computer + arm both on your WiFi, arm is 192.168.2.xxx (from i
 
 ## physical set up
 
-(AP MODE) 
-    -- works anywhere. the arm makes its OWN WiFi hotspot,
-        so it does NOT need to be near a router.
+(AP MODE)
+-- works anywhere. the arm makes its OWN WiFi hotspot,
+so it does NOT need to be near a router.
 
-(STA MODE) 
-    -- the arm must be within range of your WiFi router,
-        and that router must be 2.4GHz (NOT 5GHz).
+(STA MODE)
+-- the arm must be within range of your WiFi router,
+and that router must be 2.4GHz (NOT 5GHz).
 
     safety: if a servo or the base ever gets HOT or smells burnt,
-        unplug the power immediately and let it cool before inspecting. 
+        unplug the power immediately and let it cool before inspecting.
 
-  1. place the arm
-       - put it on a stable, flat surface
-       - give it room to move freely: keep cups, objects, cables, and the
-         other arm OUT of its swing reach so it can't hit anything
-       - if you can, clamp or weight the base so it doesn't tip over
+1. place the arm
+   - put it on a stable, flat surface
+   - give it room to move freely: keep cups, objects, cables, and the
+     other arm OUT of its swing reach so it can't hit anything
+   - if you can, clamp or weight the base so it doesn't tip over
 
-  2. power the arm
-       - plug the wall power adapter into the arm's power port, then into
-         the wall outlet  (this is the main power -- the servos need it)
-       - the little OLED screen lights up and shows status when it's on
-       - wait ~30 seconds for it to finish booting
+2. power the arm
+   - plug the wall power adapter into the arm's power port, then into
+     the wall outlet (this is the main power -- the servos need it)
+   - the little OLED screen lights up and shows status when it's on
+   - wait ~30 seconds for it to finish booting
 
-  3. manage the cables   (important -- a pinched wire caused problems before)
-       - keep all cables OUT of the joints and out of the swing path
-       - don't let anything drape over the arm or get pinched as it moves
+3. manage the cables (important -- a pinched wire caused problems before)
+   - keep all cables OUT of the joints and out of the swing path
+   - don't let anything drape over the arm or get pinched as it moves
 
-  4. (optional) USB-C to the computer  -- "the middle port"
-       - NOT required for WiFi control: the arm is controlled wirelessly
-       - only needed if controlling over serial, or for first-time config
-       - for this code (WiFi), you can leave it unplugged
-
-
+4. (optional) USB-C to the computer -- "the middle port"
+   - NOT required for WiFi control: the arm is controlled wirelessly
+   - only needed if controlling over serial, or for first-time config
+   - for this code (WiFi), you can leave it unplugged
 
 ## software set up
 
@@ -96,3 +94,15 @@ open the terminal with Terminal → New Terminal (top menu)
 
 to stop running:
 press Ctrl + C in the terminal.
+
+## run both at once (only works in STA mode)
+    (fyi the file path based on a different device)
+    
+open terminal 1:
+
+    left arm:
+        cd C:\Users\susan\OneDrive\Desktop\robot-arm\slop-robot
+        python my_first_arm.py --ip 192.168.2.239
+    right arm:
+        cd C:\Users\susan\OneDrive\Desktop\robot-arm\slop-robot
+        python my_first_arm.py --ip 192.168.2.190
