@@ -98,11 +98,26 @@ press Ctrl + C in the terminal.
 ## run both at once (only works in STA mode)
     (fyi the file path based on a different device)
     
-open terminal 1:
+    ** AP mode can't do this: both arms are 192.168.4.1, and your computer can
+       only join one arm's hotspot at a time. both arms must be in STA mode,
+       each on your WiFi with its own IP. **
 
-    left arm:
+you need TWO terminals -- one per arm, both running at the same time.
+(in vscode: Terminal → New Terminal again, or the split-terminal icon)
+
+open terminal 1 -- left arm:
         cd C:\Users\susan\OneDrive\Desktop\robot-arm\slop-robot
         python my_first_arm.py --ip 192.168.2.239
-    right arm:
+
+open terminal 2 -- right arm:
         cd C:\Users\susan\OneDrive\Desktop\robot-arm\slop-robot
-        python my_first_arm.py --ip 192.168.2.190
+        python right_arm.py --ip 192.168.2.190
+        # right_arm.py is the mirror version (base flipped) so it reaches
+        # the centre from the right side
+
+to stop: press Ctrl + C in EACH terminal.
+
+    !! heads up: the two run independently and do NOT coordinate -- if they
+       both reach the middle they can HIT each other. only run both this way
+       if they work separate areas. for shared space use two_arms.py (it
+       makes them take turns so they can't collide). !!
