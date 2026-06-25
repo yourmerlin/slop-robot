@@ -1,9 +1,9 @@
-## how to use / set up!
+# how to use / set up!
 
 AP mode → your computer joins RoArm-M2, arm is 192.168.4.1.
 STA mode → your computer + arm both on your WiFi, arm is 192.168.2.xxx (from its screen).
 
-# physical set up
+## physical set up
 
 (STA MODE)
 connect robot via usb-c to the computer (the middle port in the hardware)
@@ -11,7 +11,7 @@ make sure both robots are connected via usb-c
 
 (AP MODE)
 
-# software set up
+## software set up
 
 (STA MODE) -- run on ur personal wifi
 
