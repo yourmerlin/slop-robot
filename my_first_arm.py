@@ -23,7 +23,7 @@ How to use this file!!
 
 import argparse
 import json
-from random import random
+import random
 import time
 
 import requests
@@ -74,17 +74,15 @@ GRIP_SHUT = 180
 #       seconds   how long to wait here before the next line
 
 POSES = [
-    #  base  shoulder  elbow   claw        seconds   what it does
-    (   0,      -5,     95,    GRIP_OPEN,   1.0),  # 1. centered, up, claw open (rest)
-    ( -25,      -5,     95,    GRIP_OPEN,   1.0),  # 2. swing out to the LEFT (still high & safe)
-    ( -25,      22,    120,    GRIP_OPEN,   1.1),  # 3. reach OUT/down on the left   <-- "how far down"
-    ( -25,      22,    120,    GRIP_SHUT,   0.8),  # 4. close the claw - GRAB
-    (  25,      22,    120,    GRIP_SHUT,   1.8),  # 5. SWEEP across to the RIGHT, low & gripping (base sweep)
-    (  25,      -5,     95,    GRIP_SHUT,   1.2),  # 6. pull IN toward itself, still holding (shoulder in/out)
-    (  25,      -5,     95,    GRIP_OPEN,   1.0),  # 7. open - release on the right
-    (   0,      -5,     95,    GRIP_OPEN,   1.2),  # 8. back to center  ->  loops
+    #  base                    shoulder  elbow                     claw        seconds
+    ( 0,                       36,       random.randint(140,150),  GRIP_OPEN,  0.6),  # 1. shoulder DOWN, elbow OUT, open
+    ( random.randint(0,5),     36,       random.randint(110,125),  GRIP_SHUT,  0.5),  # 2. curl IN + GRAB
+    ( random.randint(0,5),     36,       random.randint(140,150),  GRIP_OPEN,  0.5),  # 3. reach OUT + open
+    ( random.randint(5,10),    36,       random.randint(110,125),  GRIP_SHUT,  0.5),  # 4. curl IN + GRAB
+    ( random.randint(0,5),     36,       random.randint(140,150),  GRIP_OPEN,  0.5),  # 5. reach OUT + open
+    ( random.randint(0,5),     36,       random.randint(110,125),  GRIP_SHUT,  0.5),  # 6. curl IN + GRAB
+    ( 0,                       36,       random.randint(140,150),  GRIP_OPEN,  0.6),  # 7. reach OUT + open -> loops
 ]
-
 # safety limits/constraints 
 
 LIMITS = {
