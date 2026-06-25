@@ -13,8 +13,8 @@ STA mode → your computer + arm both on your WiFi, arm is 192.168.2.xxx (from i
     -- the arm must be within range of your WiFi router,
         and that router must be 2.4GHz (NOT 5GHz).
 
-        ** safety: if a servo or the base ever gets HOT or smells burnt,
-            unplug the power immediately and let it cool before inspecting. **
+    safety: if a servo or the base ever gets HOT or smells burnt,
+        unplug the power immediately and let it cool before inspecting. 
 
   1. place the arm
        - put it on a stable, flat surface
