@@ -54,7 +54,7 @@ ARM_IP = "192.168.4.1"
     # STA mode: 192.168.2.190
     # AP mode: 192.168.4.1
 
-SPEED = 15
+SPEED = 10
 ACC   = 10
 
 # the claw -- on this arm a LOW number OPENS, a HIGH number CLOSES.
@@ -77,13 +77,13 @@ GRIP_SHUT = 180
 #   reaches toward the CENTRE from the right side. shoulder/elbow are the same.
 POSES = [
     #  base                     shoulder  elbow                     claw        seconds
-    ( 0,                        36,       random.randint(140,150),  GRIP_OPEN,  0.6),  # 1. shoulder DOWN, elbow OUT, open
-    ( random.randint(-5,0),     36,       random.randint(110,125),  GRIP_SHUT,  0.5),  # 2. curl IN + GRAB
-    ( random.randint(-5,0),     36,       random.randint(140,150),  GRIP_OPEN,  0.5),  # 3. reach OUT + open
-    ( random.randint(-10,-5),   36,       random.randint(110,125),  GRIP_SHUT,  0.5),  # 4. curl IN + GRAB
-    ( random.randint(-5,0),     36,       random.randint(140,150),  GRIP_OPEN,  0.5),  # 5. reach OUT + open
-    ( random.randint(-5,0),     36,       random.randint(110,125),  GRIP_SHUT,  0.5),  # 6. curl IN + GRAB
-    ( 0,                        36,       random.randint(140,150),  GRIP_OPEN,  0.6),  # 7. reach OUT + open -> loops
+    ( 0,                        22,       random.randint(140,150),  GRIP_OPEN,  2.0),  # 1. shoulder down (eased), elbow OUT, open
+    ( random.randint(-5,0),     22,       random.randint(110,125),  GRIP_SHUT,  1.8),  # 2. curl IN + GRAB
+    ( random.randint(-5,0),     22,       random.randint(140,150),  GRIP_OPEN,  1.8),  # 3. reach OUT + open
+    ( random.randint(-10,-5),   22,       random.randint(110,125),  GRIP_SHUT,  1.8),  # 4. curl IN + GRAB
+    ( random.randint(-5,0),     22,       random.randint(140,150),  GRIP_OPEN,  1.8),  # 5. reach OUT + open
+    ( random.randint(-5,0),     22,       random.randint(110,125),  GRIP_SHUT,  1.8),  # 6. curl IN + GRAB
+    ( 0,                        22,       random.randint(140,150),  GRIP_OPEN,  2.0),  # 7. reach OUT + open -> loops
 ]
 
 # safety limits/constraints
